@@ -1,0 +1,29 @@
+{
+  "name": "arcadia-scaffolding",
+  "version": "1.0.0",
+  "description": "HTML version of Arcadia Scaffolding Project",
+  "main": "/js/script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RostumAhady/arcadiascaffolding.git"
+  },
+  "author": "Rostum Ahady",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RostumAhady/arcadiascaffolding/issues"
+  },
+  "homepage": "https://github.com/RostumAhady/arcadiascaffolding#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-contrib-sass": "latest",
+    "grunt-postcss": "latest",
+    "autoprefixer": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest"
+  }
+}

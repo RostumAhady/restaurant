@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+$paragraph: 16px;
+$roboto: 'Roboto', sans-serif;
+$white: #fff;
+$dark: #323232;
+$light: #E6E0D0;
+$mobile: 768px;
+$tablet: 1024px;
+
+// query
+@mixin mobile {
+    @media (max-width: #{$mobile}){
+        @content;
+    }
+}
+@mixin tablet {
+    @media (max-width: #{$tablet}){
+        @content;
+    }
+}
+
+
+html, body{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: $light;
+}
+ul{
+  list-style-type: none;
+  padding: 0;
+}
+p{
+  margin:0;
+  // margin-bottom: 0 !important;
+}
+.container{background: $light;}
+.fixed{position: fixed;}
+.absolute{position: absolute;}
+.flex{display: flex;}
+.t-center{text-align: center;}
+
+.body-grid{
+  display: grid;
+  grid-template-columns: 250px auto;
+  @include mobile{display: block;}
+}
+
+//siderbar css start
+.sidebar{
+  height: 100%;
+  width: 220px;
+  .flex{
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+  }
+}
+
+.sidebar-container{
+  background: #2F2F2F;
+  color: $light;
+}
+
+.sidebar-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center;
+}
+
+.branding{
+  margin: 0 auto;
+  width: max-content;
+}
+
+//sidebar css end
+
+//landing start
+.landing{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/landing.jpg") no-repeat 0;
+  background-size: cover;
+  height: 110vh;
+  justify-content: start;
+  align-items: center;
+  .title{
+    margin-left: 20px;
+    height: max-content;
+    span{
+      font-size: 42px;
+      font-weight: bolder;
+      display: block;
+      color: $white;
+    }
+  }
+}
+//landing end
+
+//menu start
+.menu-wrapper{
+  background: $light;
+  display: grid;
+  grid-template-columns: 40px auto;
+  background: $light;
+}
+
+.menu-sidebar-container{
+  background: $white;
+  transform: translateX(-100%);
+}
+.menu-sidebar{
+
+  ul{
+    li{
+      display: block;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(-180deg);
+      padding-right: $paragraph;
+    }
+  }
+}
+
+
+
