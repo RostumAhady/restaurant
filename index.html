@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
   <title>Restaurant</title>
 </head>
 <body>
@@ -42,16 +44,16 @@
           <li class="dot"></li>
         </ul>
       </div> <!-- landing end -->
-      <div class="container">
+      <div class="container padding">
         <div class="about-grid"> <!-- book/about start -->
-          <div class="grid-item">
+          <div>
             <h4>Reservations</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, culpa.</p>
             <a class="button">Book a Table</a>
           </div>
-          <div class="grid-item img1"></div>
-          <div class="grid-item img2"></div>
-          <div class="grid-item">
+          <div class="img1"></div>
+          <div class="img2"></div>
+          <div>
             <h4>About</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, molestiae quibusdam adipisci et fugiat voluptas quas dolore perferendis, optio quia vel, repellendus sapiente inventore totam quasi tenetur veniam sunt itaque.</p>
           </div>
@@ -63,124 +65,280 @@
         <!-- menu start -->
         <div class="menu-wrapper">
           <div class="menu-sidebar-container">
-            <div class="menu-sidebar">
-              <ul>
-                <li>Lunch</li>
-                <li>Dinner</li>
-                <li>Drinks</li>
-              </ul>
-            </div>
+            <ul class="menu-sidebar">
+              <a id="lunchBtn">Lunch</a>
+              <a id="dinnerBtn">Dinner</a>
+              <a id="drinksBtn">Drinks</a>
+            </ul>
           </div>
           <div class="menu-main">
-            <h2>Lunch</h2>
-            <div class="menu-header">
-              <h4>Starters</h4>
-              <span class="line"></span> 
-            </div>
-            <div class="menu-grid container">
-              <div class="grid-item">
-                <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
-              </div>
-              <div class="grid-item">
-                <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
-              </div>
-              <div class="grid-item">
-                <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
-              </div>
-              <div class="grid-item">
-                <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
-              </div>
-              <div class="grid-item">
-                <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
-              </div>
-              <div class="grid-item">
-                <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
-              </div>
-              <div class="grid-item">
-                <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
-              </div>
-              <div class="grid-item">
-                <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
-              </div>
-              <div class="grid-item">
-                <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
-              </div>
-            
-            </div>
-            <div class="menu-header">
+            <div id="lunch">
+              <h2>Lunch</h2>
+              <div class="menu-header">
                 <h4>Starters</h4>
                 <span class="line"></span> 
+              </div>
+              <div class="menu-grid">
+                <div class="lunch-grid-item grid-item">
+                  <h5 class="inline">Lorem, ipsum.</h5> <span class="inline float-right">£8.50</span>
+                  <i>Lorem ipsum dolor sit amet consectetur.</i>
+                </div>
+                <div class="lunch-grid-item grid-item">
+                  <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                  <i>Lorem ipsum dolor sit amet consectetur.</i>
+                </div>
+                <div class="lunch-grid-item grid-item">
+                  <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                  <i>Lorem ipsum dolor sit amet consectetur.</i>
+                </div>
+                <div class="lunch-grid-item grid-item">
+                  <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                  <i>Lorem ipsum dolor sit amet consectetur.</i>
+                </div>
+                <div class="lunch-grid-item grid-item">
+                  <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                  <i>Lorem ipsum dolor sit amet consectetur.</i>
+                </div>
+                <div class="lunch-grid-item grid-item">
+                  <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                  <i>Lorem ipsum dolor sit amet consectetur.</i>
+                </div>
+                <div class="lunch-grid-item grid-item">
+                  <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                  <i>Lorem ipsum dolor sit amet consectetur.</i>
+                </div>
+                <div class="lunch-grid-item grid-item">
+                  <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                  <i>Lorem ipsum dolor sit amet consectetur.</i>
+                </div>
+                <div class="lunch-grid-item grid-item">
+                  <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                  <i>Lorem ipsum dolor sit amet consectetur.</i>
+                </div>
+              
+              </div>
+              <div class="menu-header">
+                  <h4>Starters</h4>
+                  <span class="line"></span> 
+              </div>
+              <div class="menu-grid">
+                <div class="lunch-grid-item grid-item">
+                  <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                  <i>Lorem ipsum dolor sit amet consectetur.</i>
+                </div>
+                <div class="lunch-grid-item grid-item">
+                  <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                  <i>Lorem ipsum dolor sit amet consectetur.</i>
+                </div>
+                <div class="lunch-grid-item grid-item">
+                  <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                  <i>Lorem ipsum dolor sit amet consectetur.</i>
+                </div>
+                <div class="lunch-grid-item grid-item">
+                  <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                  <i>Lorem ipsum dolor sit amet consectetur.</i>
+                </div>
+                <div class="lunch-grid-item grid-item">
+                  <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                  <i>Lorem ipsum dolor sit amet consectetur.</i>
+                </div>
+                <div class="lunch-grid-item grid-item">
+                  <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                  <i>Lorem ipsum dolor sit amet consectetur.</i>
+                </div>
+                <div class="lunch-grid-item grid-item">
+                  <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                  <i>Lorem ipsum dolor sit amet consectetur.</i>
+                </div>
+                <div class="lunch-grid-item grid-item">
+                  <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                  <i>Lorem ipsum dolor sit amet consectetur.</i>
+                </div>
+                <div class="lunch-grid-item grid-item">
+                  <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                  <i>Lorem ipsum dolor sit amet consectetur.</i>
+                </div>
+              </div>
+              <div class="menu-header">
+                  <h4>Starters</h4>
+                  <span class="line"></span> 
+              </div>
+              <div class="menu-grid">
+                <div class="lunch-grid-item grid-item">
+                  <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                  <i>Lorem ipsum dolor sit amet consectetur.</i>
+                </div>
+                <div class="lunch-grid-item grid-item">
+                  <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                  <i>Lorem ipsum dolor sit amet consectetur.</i>
+                </div>
+                <div class="lunch-grid-item grid-item">
+                  <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                  <i>Lorem ipsum dolor sit amet consectetur.</i>
+                </div>
+                <div class="lunch-grid-item grid-item">
+                  <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                  <i>Lorem ipsum dolor sit amet consectetur.</i>
+                </div>
+              </div>
             </div>
-            <div class="menu-grid">
-              <div class="grid-item">
-                <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
+            <div id="dinner">
+                <h2>Dinner</h2>
+                <div class="menu-header">
+                  <h4>Starters</h4>
+                  <span class="line"></span> 
+                </div>
+                <div class="menu-grid">
+                  <div class="dinner-grid-item grid-item">
+                    <h5 class="inline">Lorem, ipsum.</h5> <span class="inline float-right">£8.50</span>
+                    <i>Lorem ipsum dolor sit amet consectetur.</i>
+                  </div>
+                  <div class="dinner-grid-item grid-item">
+                    <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                    <i>Lorem ipsum dolor sit amet consectetur.</i>
+                  </div>
+                  <div class="dinner-grid-item grid-item">
+                    <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                    <i>Lorem ipsum dolor sit amet consectetur.</i>
+                  </div>
+                  <div class="dinner-grid-item grid-item">
+                    <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                    <i>Lorem ipsum dolor sit amet consectetur.</i>
+                  </div>
+                  <div class="dinner-grid-item grid-item">
+                    <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                    <i>Lorem ipsum dolor sit amet consectetur.</i>
+                  </div>
+                  <div class="dinner-grid-item grid-item">
+                    <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                    <i>Lorem ipsum dolor sit amet consectetur.</i>
+                  </div>
+                  <div class="dinner-grid-item grid-item">
+                    <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                    <i>Lorem ipsum dolor sit amet consectetur.</i>
+                  </div>
+                  <div class="dinner-grid-item grid-item">
+                    <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                    <i>Lorem ipsum dolor sit amet consectetur.</i>
+                  </div>
+                  <div class="dinner-grid-item grid-item">
+                    <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                    <i>Lorem ipsum dolor sit amet consectetur.</i>
+                  </div>
+                
+                </div>
+                <div class="menu-header">
+                    <h4>Starters</h4>
+                    <span class="line"></span> 
+                </div>
+                <div class="menu-grid">
+                  <div class="dinner-grid-item grid-item">
+                    <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                    <i>Lorem ipsum dolor sit amet consectetur.</i>
+                  </div>
+                  <div class="dinner-grid-item grid-item">
+                    <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                    <i>Lorem ipsum dolor sit amet consectetur.</i>
+                  </div>
+                  <div class="dinner-grid-item grid-item">
+                    <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                    <i>Lorem ipsum dolor sit amet consectetur.</i>
+                  </div>
+                  <div class="dinner-grid-item grid-item">
+                    <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                    <i>Lorem ipsum dolor sit amet consectetur.</i>
+                  </div>
+                  <div class="dinner-grid-item grid-item">
+                    <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                    <i>Lorem ipsum dolor sit amet consectetur.</i>
+                  </div>
+                  <div class="dinner-grid-item grid-item">
+                    <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                    <i>Lorem ipsum dolor sit amet consectetur.</i>
+                  </div>
+                  <div class="dinner-grid-item grid-item">
+                    <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                    <i>Lorem ipsum dolor sit amet consectetur.</i>
+                  </div>
+                  <div class="dinner-grid-item grid-item">
+                    <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                    <i>Lorem ipsum dolor sit amet consectetur.</i>
+                  </div>
+                  <div class="dinner-grid-item grid-item">
+                    <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                    <i>Lorem ipsum dolor sit amet consectetur.</i>
+                  </div>
+                </div>
+                <div class="menu-header">
+                    <h4>Starters</h4>
+                    <span class="line"></span> 
+                </div>
+                <div class="menu-grid">
+                  <div class="dinner-grid-item grid-item">
+                    <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                    <i>Lorem ipsum dolor sit amet consectetur.</i>
+                  </div>
+                  <div class="dinner-grid-item grid-item">
+                    <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                    <i>Lorem ipsum dolor sit amet consectetur.</i>
+                  </div>
+                  <div class="dinner-grid-item grid-item">
+                    <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                    <i>Lorem ipsum dolor sit amet consectetur.</i>
+                  </div>
+                  <div class="dinner-grid-item grid-item">
+                    <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                    <i>Lorem ipsum dolor sit amet consectetur.</i>
+                  </div>
+                </div>
+              </div> 
+            <div id="drinks">
+                  <h2>Drinks</h2>
+                  <div class="menu-header">
+                    <h4>Starters</h4>
+                    <span class="line"></span> 
+                  </div>
+                  <div class="menu-grid">
+                    <div class="drinks-grid-item grid-item">
+                      <h5 class="inline">Lorem, ipsum.</h5> <span class="inline float-right">£8.50</span>
+                      <i>Lorem ipsum dolor sit amet consectetur.</i>
+                    </div>
+                    <div class="drinks-grid-item grid-item">
+                      <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                      <i>Lorem ipsum dolor sit amet consectetur.</i>
+                    </div>
+                    <div class="drinks-grid-item grid-item">
+                      <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                      <i>Lorem ipsum dolor sit amet consectetur.</i>
+                    </div>
+                    <div class="drinks-grid-item grid-item">
+                      <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                      <i>Lorem ipsum dolor sit amet consectetur.</i>
+                    </div>
+                    <div class="drinks-grid-item grid-item">
+                      <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                      <i>Lorem ipsum dolor sit amet consectetur.</i>
+                    </div>
+                    <div class="drinks-grid-item grid-item">
+                      <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                      <i>Lorem ipsum dolor sit amet consectetur.</i>
+                    </div>
+                    <div class="drinks-grid-item grid-item">
+                      <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                      <i>Lorem ipsum dolor sit amet consectetur.</i>
+                    </div>
+                    <div class="drinks-grid-item grid-item">
+                      <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                      <i>Lorem ipsum dolor sit amet consectetur.</i>
+                    </div>
+                    <div class="drinks-grid-item grid-item">
+                      <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
+                      <i>Lorem ipsum dolor sit amet consectetur.</i>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="grid-item">
-                <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
-              </div>
-              <div class="grid-item">
-                <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
-              </div>
-              <div class="grid-item">
-                <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
-              </div>
-              <div class="grid-item">
-                <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
-              </div>
-              <div class="grid-item">
-                <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
-              </div>
-              <div class="grid-item">
-                <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
-              </div>
-              <div class="grid-item">
-                <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
-              </div>
-              <div class="grid-item">
-                <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
-              </div>
-            </div>
-            <div class="menu-header">
-                <h4>Starters</h4>
-                <span class="line"></span> 
-            </div>
-            <div class="menu-grid">
-              <div class="grid-item">
-                <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
-              </div>
-              <div class="grid-item">
-                <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
-              </div>
-              <div class="grid-item">
-                <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
-              </div>
-              <div class="grid-item">
-                <h5>Lorem, ipsum.</h5> <span class="inline float-right"></span>
-                <i>Lorem ipsum dolor sit amet consectetur.</i>
-              </div>
-            </div>
-          </div> 
+          </div>
         </div>
         <!-- menu end -->
         <div class="burger">
