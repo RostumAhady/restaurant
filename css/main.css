@@ -38,6 +38,9 @@ h4 {
 
 .padding {
   padding: 150px 50px; }
+  @media (max-width: 768px) {
+    .padding {
+      padding: 50px 20px; } }
 
 .body-grid {
   display: grid;
@@ -77,7 +80,8 @@ h4 {
 .landing {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/landing.jpg") no-repeat 0;
   background-size: cover;
-  height: 110vh;
+  background-position: center;
+  height: 100vh;
   justify-content: start;
   align-items: center;
   position: relative;
@@ -96,6 +100,13 @@ h4 {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 50% 50%; }
+  @media (max-width: 768px) {
+    .about-grid {
+      text-align: center;
+      grid-template-columns: 100%;
+      grid-template-rows: 50% 50%; }
+      .about-grid .img1, .about-grid .img2 {
+        display: none; } }
 
 .menu-wrapper {
   background: #E6E0D0;
@@ -136,7 +147,8 @@ h4 {
     transform: rotate(-180deg);
     padding-right: 8px;
     margin-right: 8px;
-    width: 33px; }
+    width: 33px;
+    cursor: pointer; }
 
 .active {
   color: #8DD35F !important;

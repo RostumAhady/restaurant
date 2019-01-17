@@ -138,7 +138,7 @@ function highlightLink() {
 
   // number adjustments made for aesthetics, they are not required for the functionality
   const coords = {
-    width: linkCoords.width - 35,
+    width: linkCoords.width - 30,
     height: linkCoords.height +5 ,
     // to allow hover effect to work even when scrolled
     top: linkCoords.top + window.scrollY -2,
