@@ -9,6 +9,8 @@ function fadeIn(){
     nav.classList.add('transform');
     menuMain.style.opacity = 1;
     loopRemoveFade(lunchGridItems);
+    loopRemoveFade(dinnerGridItems);
+    loopRemoveFade(drinksGridItems);
     loopIncreaseLineWidth(lines);
   } else {
     nav.classList.remove('transform');
@@ -115,7 +117,7 @@ function removeFade(j, array){
    setTimeout(() => {
     array[j].style.opacity = 1;
     array[j].style.transform = 'translateY(0%)';
-   }, 180 * j);
+   }, 150 * j);
 
    
 }
@@ -148,7 +150,7 @@ function highlightLink() {
   highlight.style.width = `${coords.width}px`
   highlight.style.height = `${coords.height}px`
   highlight.style.transform = `translate(${coords.left}px, ${coords.top}px)`
-
+  
 }
 // when a link is hovered, it's coordinates are fetched through highlightLink()
 links.forEach(link => link.addEventListener('mouseenter', highlightLink))
@@ -157,5 +159,6 @@ links.forEach(link => link.addEventListener('mouseenter', highlightLink))
 window.addEventListener('scroll', ()=>{
   highlight.style.transform = `translate(0px, 0px)`;
 });
+
 
 

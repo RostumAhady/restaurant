@@ -9,6 +9,7 @@ $light: #E6E0D0;
 $mobile: 768px;
 $tablet: 1024px;
 
+
 // query
 @mixin mobile {
     @media (max-width: #{$mobile}){
@@ -20,6 +21,8 @@ $tablet: 1024px;
         @content;
     }
 }
+
+* {box-sizing: border-box;}
 
 body{
   margin: 0;
@@ -43,7 +46,7 @@ h4{margin-bottom: 2rem;}
 .flex{display: flex;}
 .t-center{text-align: center;}
 .padding{
-  padding: 150px 50px;
+  padding: 150px 40px;
   @include mobile{padding: 50px 20px;}
 }
 
@@ -78,11 +81,18 @@ h4{margin-bottom: 2rem;}
     flex-direction: column;
     justify-content: center !important;
     align-items: center;
+    li{
+      &:hover{
+        color: rgb(216, 112, 147);
+        cursor: pointer;
+      }
+    }
 }
 
 .branding{
   margin: 0 auto;
   width: max-content;
+  img{width: ($sidebarWidth - 30px);} //30px removed because padding
 }
 
 //sidebar css end
@@ -113,10 +123,30 @@ h4{margin-bottom: 2rem;}
 //about start
 
 .about-grid{
-  height: max-content;
+  background: $dark;
+  color: $light;
+  text-align: center;
+  height: 500px;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 35% 65%;
   grid-template-rows: 50% 50%;
+  div{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+  }
+  // .button{justify-self: center;}
+  p{padding: 0px $padding $padding $padding}
+  .img1{
+    background: url("/img/img1.jpeg");
+    background-size: cover;
+    background-position: center;
+  }
+  .img2{
+    background: url("/img/img2.jpeg");
+    background-size: cover;
+    background-position: center;
+  }
   @include mobile{
     text-align: center;
     grid-template-columns: 100%;
@@ -182,7 +212,7 @@ h4{margin-bottom: 2rem;}
 }
 
 .active{
-  color: #8DD35F !important;
+  color: rgb(216, 112, 147) !important;
   font-weight: bold;  
 }
 
@@ -228,6 +258,83 @@ h4{margin-bottom: 2rem;}
 #dinner{display: none; opacity: 0;}
 #drinks{display: none; opacity: 0;}
 #lunch, #dinner, #drinks{transition: ease-in-out all 1s;}
+
+//buttons
+
+// .button{
+//   color: $dark !important;
+//   border: solid 1px $dark;
+//   background: $light;
+//   width: max-content;
+//   padding: $padding /2;
+//   cursor: pointer;
+// }
+
+.button {
+display: flex;
+flex-direction: column;
+justify-content: center;
+margin: auto;
+
+.c-btn {
+  background-color: $light;
+  color: $dark;
+  cursor: pointer;
+  display: inline-block;
+  font-family: sans-serif;
+  font-weight: bold;
+  line-height: 12px;
+  margin: 10px;
+  min-width: 100px;
+  padding: 18px 40px;
+  position: relative; 
+  outline: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.3s;
+  vertical-align: middle;
+
+  &:before, 
+  &:after {
+    box-sizing: border-box;
+    content: '';
+    height: 20px;
+    position: absolute;
+    transition: 0.3s;
+    width: 20px;
+    z-index: 3;
+  }   
+
+  &:before {
+    bottom: -10px;
+    border-bottom: 2px solid $light;
+    border-left: 2px solid $light;
+    left: -10px;
+    transform-origin: 0 100%;
+  }     
+  
+  &:after {
+    border-right: 2px solid $light;
+    border-top: 2px solid $light;
+    right: -10px;
+    top: -10px;
+    transform-origin: 100% 0%;
+  } 
+
+  &:hover {
+    vertical-align: middle;
+
+    &::before,
+    &::after {
+      width: calc(100% + 20px);
+      height: calc(100% + 20px);
+    }
+   }    
+  }     
+}   
+
+
 
 
 // hover link buttons highlight
