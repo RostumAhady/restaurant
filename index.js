@@ -1,19 +1,27 @@
 const wrapper = document.querySelector('.menu-wrapper'),
       nav = document.querySelector('.menu-sidebar-container'),
       menuMain = document.querySelector('.menu-main'),
-      topOfNav = wrapper.offsetTop - 450;
+      gallery = document.querySelector('.gallery');
 
 function fadeIn(){
-  console.log(topOfNav, window.scrollY);
-  if(window.scrollY >= topOfNav){
-    nav.classList.add('transform');
+  const topOfNav = menuMain.offsetTop - 400;
+  const topOfGallery = gallery.offsetTop - 500;
+  // console.log(topOfNav, scrollY);
+  console.log(topOfGallery, window.scrollY);
+  if(window.scrollY >= topOfGallery){
+    nav.classList.remove('show');
+    menuMain.style.opacity = 0;
+    resetFade()
+    return;
+  } else if(window.scrollY >= topOfNav){
+    nav.classList.add('show');
     menuMain.style.opacity = 1;
     loopRemoveFade(lunchGridItems);
     loopRemoveFade(dinnerGridItems);
     loopRemoveFade(drinksGridItems);
-    loopIncreaseLineWidth(lines);
+    loopRemoveFade(lines);
   } else {
-    nav.classList.remove('transform');
+    nav.classList.remove('show');
     menuMain.style.opacity = 0;
     resetFade()
   }
@@ -29,6 +37,11 @@ const lunchBtn = document.getElementById('lunchBtn'),
       dinnerMenu = document.getElementById('dinner'),
       drinksMenu = document.getElementById('drinks');
 
+function removeDisplay(menu){
+  menu.style.display = 'none';
+  menu.style.opacity = 0;
+}
+
 function menuButtonClick(e){
   resetFade()
   lunchBtn.classList.remove('active')
@@ -40,38 +53,32 @@ function menuButtonClick(e){
     setTimeout(() => {
       lunchMenu.style.opacity = 1;
       loopRemoveFade(lunchGridItems)
-      loopIncreaseLineWidth(lines)
-    }, 200);     
-    dinnerMenu.style.display = 'none';
-    dinnerMenu.style.opacity = 0;
-    drinksMenu.style.display = 'none';
-    drinksMenu.style.opacity = 0;
+      loopRemoveFade(lines)
+    }, 400);     
+    removeDisplay(dinnerMenu)
+    removeDisplay(drinksMenu)
   }
   if(e.target.id === 'dinnerBtn'){
     dinnerBtn.classList.add('active');
-    lunchMenu.style.display = 'none';
-    lunchMenu.style.opacity = 0;
+    removeDisplay(lunchMenu)
     dinnerMenu.style.display = 'block';
     setTimeout(() => {
       dinnerMenu.style.opacity = 1;
       loopRemoveFade(dinnerGridItems)
-      loopIncreaseLineWidth(lines)
-    }, 200); 
-    drinksMenu.style.display = 'none';
-    drinksMenu.style.opacity = 0;
+      loopRemoveFade(lines)
+    }, 400); 
+    removeDisplay(drinksMenu)
   }
   if(e.target.id === 'drinksBtn'){
     drinksBtn.classList.add('active');
-    lunchMenu.style.display = 'none';
-    lunchMenu.style.opacity = 0;
-    dinnerMenu.style.display = 'none';
-    dinnerMenu.style.opacity = 0;
+    removeDisplay(lunchMenu);
+    removeDisplay(dinnerMenu);
     drinksMenu.style.display = 'block';
     setTimeout(() => {
       drinksMenu.style.opacity = 1;
       loopRemoveFade(drinksGridItems)
-      loopIncreaseLineWidth(lines)
-    }, 200); 
+      loopRemoveFade(lines)
+    }, 400); 
   }
 
 }
@@ -90,75 +97,46 @@ const lines = Array.from(document.querySelectorAll('.line')),
 
 function resetFade(){
   gridItems.forEach((gridItem) =>{
-    gridItem.style.opacity = 0;
-    gridItem.style.transform = 'translateY(30%)'; 
+    gridItem.classList.remove('show');
   })
   lines.forEach((line) => {
     line.style.width = 0;
   })
 }
 function loopRemoveFade(array){
-  for(let i = 0; i<array.length; i++){
-    removeFade(i, array)
+  
+  if(array === lunchGridItems || array === dinnerGridItems || array === drinksGridItems){
+    for(let i = 0; i<array.length; i++){
+      removeFade(i, array)
+    }
   }
-}
-
-function loopIncreaseLineWidth(array){
-  for(let i = 0; i<array.length; i++){
+  
+  if(array === lines){ 
+    for(let i = 0; i<array.length; i++){
     increaseLineWidth(i, array)    
-  }
+  }}
 }
 
 function increaseLineWidth(k, array){
-  array[k].style.width = '100%';
+  array[k].style.width = '90%';
 }
 
 function removeFade(j, array){
    setTimeout(() => {
-    array[j].style.opacity = 1;
-    array[j].style.transform = 'translateY(0%)';
-   }, 150 * j);
-
-   
+    array[j].classList.add('show');
+   }, 100 * j);
 }
 
-
-//hover links
-
-const links = document.querySelectorAll('.links');
-const highlight = document.createElement('span');
-
-highlight.classList.add('highlight');
-
-// span is appended to body and moves around to location of links
-document.body.appendChild(highlight);
-
-function highlightLink() {
-  console.log("hello");
-  //grabs the coordinates
-  let linkCoords = this.getBoundingClientRect();
-
-  // number adjustments made for aesthetics, they are not required for the functionality
-  const coords = {
-    width: linkCoords.width - 30,
-    height: linkCoords.height +5 ,
-    // to allow hover effect to work even when scrolled
-    top: linkCoords.top + window.scrollY -2,
-    left: linkCoords.left + window.scrollX + 36
-  };
-  // applies to coordinates to the span with class highlight
-  highlight.style.width = `${coords.width}px`
-  highlight.style.height = `${coords.height}px`
-  highlight.style.transform = `translate(${coords.left}px, ${coords.top}px)`
-  
+window.onload = function(){
+  const loadWelcome = document.querySelector('.onLoadWidth');
+  const welcomeMessage = document.querySelector('.welcomeMessage');
+  loadWelcome.style.width = "280px";
+  setTimeout(() => {
+    welcomeMessage.style.opacity = 1;
+    welcomeMessage.innerHTML = "Welcome to Kuchi"
+  }, 1500);
 }
-// when a link is hovered, it's coordinates are fetched through highlightLink()
-links.forEach(link => link.addEventListener('mouseenter', highlightLink))
 
-
-window.addEventListener('scroll', ()=>{
-  highlight.style.transform = `translate(0px, 0px)`;
-});
 
 
 

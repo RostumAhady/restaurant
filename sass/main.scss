@@ -6,8 +6,9 @@ $roboto: 'Roboto', sans-serif;
 $white: #fff;
 $dark: #323232;
 $light: #E6E0D0;
-$mobile: 768px;
+$mobile: 767px;
 $tablet: 1024px;
+$contentPadding: 250px;
 
 
 // query
@@ -28,7 +29,6 @@ body{
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: $light;
 }
 html{
   overflow-x: hidden;
@@ -45,9 +45,10 @@ h4{margin-bottom: 2rem;}
 .absolute{position: absolute;}
 .flex{display: flex;}
 .t-center{text-align: center;}
-.padding{
-  padding: 150px 40px;
-  @include mobile{padding: 50px 20px;}
+.grid{display: grid;}
+.show{
+  opacity: 1 !important;
+  transform: translateY(0%) !important;
 }
 
 .body-grid{
@@ -71,7 +72,7 @@ h4{margin-bottom: 2rem;}
 
 .sidebar-container{
   position: relative;
-  background: #2F2F2F;
+  background: $dark;
   color: $light;
   z-index: 9;
 }
@@ -99,14 +100,40 @@ h4{margin-bottom: 2rem;}
 
 //landing start
 .landing{
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/landing.jpg") no-repeat 0;
-  background-size: cover;
-  background-position: center;
   height: 100vh;
   justify-content: start;
   align-items: center;
   position: relative;
   z-index: 9;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 33.333% 33.333% 33.333%;
+  grid-template-areas:
+  "slide"
+  "slide"
+  "slide";
+  .container{
+    transform: translateX(-1%);
+    margin: 0;
+    padding: 0;
+    width: 0px;
+    height: 43px;
+    z-index: 8;
+    color: $light;
+    grid-column: 1;
+    grid-row:3;
+    justify-self: start;
+    align-self: start;
+    background: $dark;
+    transition: all 1s ease-in-out;
+    h1{
+      margin: 0;
+      font-size: 30px;
+      padding-left: 20px;
+      transition: all 1s ease-in-out;
+      opacity: 0;
+    }
+  }
   .title{
     margin-left: 20px;
     height: max-content;
@@ -118,9 +145,43 @@ h4{margin-bottom: 2rem;}
     }
   }
 }
+
+// landing slide show
+.cycle-slideshow {
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+  grid-area: slide;
+}
+
+.cycle-slideshow > div {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  transition: transform 6.5s linear;
+  position: relative;
+  z-index: 6;
+}
+
+#slide-1 {background-image: url('/img/landing1.jpeg');}
+#slide-2 {background-image: url('/img/landing2.jpeg');}
+#slide-3 {background-image: url('/img/landing3.jpeg');}
+#slide-4 {background-image: url('/img/landing4.jpg');}
+
+.cycle-slideshow .scale {transform: scale(1.1);}
+.cycle-slideshow .fx1 {transform-origin: bottom left;}
+.cycle-slideshow .fx2 {transform-origin: top left;}
+.cycle-slideshow .fx3 {transform-origin: top right;}
+.cycle-slideshow .fx4 {transform-origin: bottom right;}
 //landing end
 
 //about start
+.about{
+  background: $light;
+  padding: $contentPadding 40px;
+  @include mobile{padding: 50px 20px;}
+}
 
 .about-grid{
   background: $dark;
@@ -158,16 +219,14 @@ h4{margin-bottom: 2rem;}
   
 }
 
-
-
 //menu start
 .menu-wrapper{
   background: $light;
+  padding-bottom: $contentPadding;
   display: grid;
   grid-template-columns: 40px auto;
   grid-template-areas: 
   "sidebar menu";
-  background: $light;
 }
 
 .menu-main{
@@ -186,10 +245,6 @@ h4{margin-bottom: 2rem;}
   position: fixed;
   bottom: 0.1px;
   transition: all 1s ease-in-out;
-}
-
-.transform{
-  transform: translate(0%, 0%);
 }
 
 .menu-sidebar{
@@ -241,15 +296,14 @@ h4{margin-bottom: 2rem;}
 
   .grid-item{
     max-width: 400px;
+    transition: all 0.5s ease-in-out;
     opacity: 0;
     transform: translateY(30%);
-    transition: all 0.5s ease-in-out;
     h5{display: inline;}
     i{
       display: block;
       margin: $padding 0;
       font-weight: 200;
-
     }
   }
 }
@@ -258,17 +312,96 @@ h4{margin-bottom: 2rem;}
 #dinner{display: none; opacity: 0;}
 #drinks{display: none; opacity: 0;}
 #lunch, #dinner, #drinks{transition: ease-in-out all 1s;}
+// menu end
+
+//contact start
+
+.contact{
+  .grid{
+    background: $light;
+    height: 750px;
+    grid-template-columns: 40% 60%;
+    @include tablet{
+      grid-template-columns: 100%;
+      grid-template-rows: 40% 60%;
+    }
+    .first{
+      padding: 70px;
+      flex-direction: column;
+      @include tablet{
+        padding: 0px;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+      }
+      .flex{
+        height: 300px;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        @include tablet{
+          align-items: center;
+          text-align: center;
+          width: min-content;
+
+        }
+        .button{
+          margin: 0;
+          align-self: center;
+          .c-btn{
+            background-color: $dark;
+            color: $light;
+            max-width: 200px;
+            &:before{
+              border-bottom: 2px solid $dark;
+              border-left: 2px solid $dark;
+            }
+            &:after {
+              border-right: 2px solid $dark;
+              border-top: 2px solid $dark;
+            }
+          }
+        }
+        h5{
+          width: max-content;
+        }
+        ul{
+          width: max-content;
+        
+        }
+      }
+    }
+    .line{
+      width: 80% !important;
+      margin: 20px auto;
+      transition: none;
+      @include tablet{
+        width: 2px !important;
+        height: 80%;
+        margin: auto 20px;
+      }
+    }
+    .second{
+      align-self: center;
+      justify-self: center;
+      width: min-content;
+      #map{
+        border: solid 2px $dark;
+        .maps{
+          width: 600px;
+          height: 300px;
+          @include tablet{width: 450px;}
+          @include mobile{width: 350px;}
+
+        }
+      }
+    }
+  }
+}
+
+
 
 //buttons
-
-// .button{
-//   color: $dark !important;
-//   border: solid 1px $dark;
-//   background: $light;
-//   width: max-content;
-//   padding: $padding /2;
-//   cursor: pointer;
-// }
 
 .button {
 display: flex;
@@ -334,8 +467,7 @@ margin: auto;
   }     
 }   
 
-
-
+//button end
 
 // hover link buttons highlight
 
@@ -349,3 +481,58 @@ margin: auto;
   display: block;
 
 }
+
+// gallery
+.gallery{
+  max-width: 760px;
+  margin: $contentPadding auto;
+  border: $light solid 10px;
+  background: $light;
+}
+
+.main-img img,
+.imgs img{
+  width: 100%;
+}
+.main-img{
+  border-top: $light solid 3px;
+  border-bottom: $light solid 3px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;   
+}
+#current {grid-column: 1 / span 2; grid-row: 1;}
+.nextImg {grid-column: 2; grid-row:1;}
+.prevImg {grid-column: 1; grid-row:1;}
+
+.galleryButton{
+  cursor: pointer;
+  z-index: 3;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  border: none;
+}
+.galleryButton:focus {
+  outline:0;
+}
+
+.imgs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+  cursor: pointer;
+}
+
+/* fade in  */
+
+@keyframes fadeIn {
+  to {opacity: 1;}
+}
+
+.fade-in{
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in 1 forwards;
+}
+
