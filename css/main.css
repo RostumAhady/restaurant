@@ -75,9 +75,12 @@ h4 {
   flex-direction: column;
   justify-content: center !important;
   align-items: center; }
-  .sidebar-nav li:hover {
-    color: #d87093;
-    cursor: pointer; }
+  .sidebar-nav a {
+    text-decoration: none;
+    color: #E6E0D0; }
+    .sidebar-nav a:hover {
+      color: #d87093;
+      cursor: pointer; }
 
 .branding {
   margin: 0 auto;
@@ -234,6 +237,8 @@ h4 {
   flex-direction: column-reverse; }
   .menu-sidebar a {
     display: block;
+    text-decoration: none;
+    color: #323232;
     writing-mode: vertical-rl;
     text-orientation: mixed;
     transform: rotate(-180deg);
@@ -258,15 +263,20 @@ h4 {
   margin: 15px 15px 15px 0;
   transition: all 1.5s ease-in-out; }
 
+.menu-header h4 {
+  margin-top: 3rem; }
+
 .menu-grid {
+  width: 90%;
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 33.33% 33.33% 33.33%;
   grid-gap: 0 20px; }
   @media (max-width: 1024px) {
     .menu-grid {
       grid-template-columns: 50% 50%; } }
   @media (max-width: 767px) {
     .menu-grid {
+      width: 100%;
       justify-content: center;
       grid-template-columns: 100%; } }
   .menu-grid .grid-item {
@@ -276,6 +286,8 @@ h4 {
     transform: translateY(30%); }
     .menu-grid .grid-item h5 {
       display: inline; }
+    .menu-grid .grid-item .float-right {
+      margin-right: 20px; }
     .menu-grid .grid-item i {
       display: block;
       margin: 16px 0;
@@ -424,7 +436,7 @@ h4 {
 
 .gallery {
   max-width: 760px;
-  margin: 250px auto;
+  margin: 125px auto;
   border: #E6E0D0 solid 10px;
   background: #E6E0D0; }
 
@@ -438,6 +450,12 @@ h4 {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 100%; }
+  .main-img button {
+    opacity: 0;
+    background: #E6E0D0;
+    transition: 0.5s ease-in-out; }
+    .main-img button:hover {
+      opacity: 0.2; }
 
 #current {
   grid-column: 1 / span 2;

@@ -82,7 +82,9 @@ h4{margin-bottom: 2rem;}
     flex-direction: column;
     justify-content: center !important;
     align-items: center;
-    li{
+    a{
+      text-decoration: none;
+      color: $light;
       &:hover{
         color: rgb(216, 112, 147);
         cursor: pointer;
@@ -255,6 +257,8 @@ h4{margin-bottom: 2rem;}
   flex-direction: column-reverse;
   a{
     display: block;
+    text-decoration: none;
+    color: $dark;
     writing-mode: vertical-rl;
     text-orientation: mixed;
     transform: rotate(-180deg);
@@ -285,12 +289,17 @@ h4{margin-bottom: 2rem;}
   transition: all 1.5s ease-in-out;
 }
 
+.menu-header{
+  h4{margin-top: 3rem;}
+}
 .menu-grid{
+  width: 90%;
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 33.33% 33.33% 33.33%;
   grid-gap: 0 20px;
   @include tablet{grid-template-columns: 50% 50%;}
   @include mobile{
+    width: 100%;
     justify-content: center;
     grid-template-columns: 100%;}
 
@@ -300,6 +309,7 @@ h4{margin-bottom: 2rem;}
     opacity: 0;
     transform: translateY(30%);
     h5{display: inline;}
+    .float-right{margin-right: 20px;}
     i{
       display: block;
       margin: $padding 0;
@@ -343,7 +353,6 @@ h4{margin-bottom: 2rem;}
           align-items: center;
           text-align: center;
           width: min-content;
-
         }
         .button{
           margin: 0;
@@ -398,8 +407,6 @@ h4{margin-bottom: 2rem;}
     }
   }
 }
-
-
 
 //buttons
 
@@ -471,6 +478,7 @@ margin: auto;
 
 // hover link buttons highlight
 
+
 .highlight{
   transition: all 0.4s;
   position: absolute;
@@ -485,7 +493,7 @@ margin: auto;
 // gallery
 .gallery{
   max-width: 760px;
-  margin: $contentPadding auto;
+  margin: $contentPadding/2 auto;
   border: $light solid 10px;
   background: $light;
 }
@@ -499,7 +507,15 @@ margin: auto;
   border-bottom: $light solid 3px;
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 100%;   
+  grid-template-rows: 100%;
+  button{
+    opacity: 0;
+    background: $light;
+    transition: 0.5s ease-in-out;
+    &:hover{
+      opacity: 0.2;
+    }
+  }   
 }
 #current {grid-column: 1 / span 2; grid-row: 1;}
 .nextImg {grid-column: 2; grid-row:1;}
