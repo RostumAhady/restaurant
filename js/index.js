@@ -134,7 +134,7 @@ window.onload = function(){
   setTimeout(() => {
     welcomeMessage.style.opacity = 1;
     welcomeMessage.innerHTML = "Welcome to Kuchi"
-  }, 1000);
+  }, 600);
 }
 
 
