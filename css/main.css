@@ -439,6 +439,9 @@ h4 {
   margin: 125px auto;
   border: #E6E0D0 solid 10px;
   background: #E6E0D0; }
+  @media (max-width: 767px) {
+    .gallery {
+      max-width: 90vw; } }
 
 .main-img img,
 .imgs img {

@@ -496,6 +496,7 @@ margin: auto;
   margin: $contentPadding/2 auto;
   border: $light solid 10px;
   background: $light;
+  @include mobile{max-width: 90vw;}
 }
 
 .main-img img,
