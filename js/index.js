@@ -124,7 +124,7 @@ function increaseLineWidth(k, array){
 function removeFade(j, array){
    setTimeout(() => {
     array[j].classList.add('show');
-   }, 100 * j);
+   }, 180 * j);
 }
 
 window.onload = function(){
