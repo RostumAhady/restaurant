@@ -166,10 +166,10 @@ h4{margin-bottom: 2rem;}
   z-index: 6;
 }
 
-#slide-1 {background-image: url('/img/landing1.jpeg');}
-#slide-2 {background-image: url('/img/landing2.jpeg');}
-#slide-3 {background-image: url('/img/landing3.jpeg');}
-#slide-4 {background-image: url('/img/landing4.jpg');}
+#slide-1 {background-image: url('https://rostumahady.github.io/restaurant/img/landing1.jpeg');}
+#slide-2 {background-image: url('https://rostumahady.github.io/restaurant/img/landing2.jpeg');}
+#slide-3 {background-image: url('https://rostumahady.github.io/restaurant/img/landing3.jpeg');}
+#slide-4 {background-image: url('https://rostumahady.github.io/restaurant/img/landing4.jpg');}
 
 .cycle-slideshow .scale {transform: scale(1.1);}
 .cycle-slideshow .fx1 {transform-origin: bottom left;}
@@ -201,12 +201,12 @@ h4{margin-bottom: 2rem;}
   // .button{justify-self: center;}
   p{padding: 0px $padding $padding $padding}
   .img1{
-    background: url("/img/img1.jpeg");
+    background: url("https://rostumahady.github.io/restaurant/img/img1.jpeg");
     background-size: cover;
     background-position: center;
   }
   .img2{
-    background: url("/img/img2.jpeg");
+    background: url("https://rostumahady.github.io/restaurant/img/img2.jpeg");
     background-size: cover;
     background-position: center;
   }
